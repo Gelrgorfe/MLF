@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scripts/basiclands.rpy", line 14, in script
+    jump Map
+ScriptError: could not find label 'Map'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/scripts/basiclands.rpy", line 14, in script
+    jump Map
+  File "D:\renpy\renpy-7.4.11-sdk\renpy\ast.py", line 1974, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\renpy\renpy-7.4.11-sdk\renpy\script.py", line 927, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'Map'.
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.0.3.22090809
+My Little Fun 0.1
+Mon May  8 21:23:46 2023

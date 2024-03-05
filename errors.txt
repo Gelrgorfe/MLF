@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/scripts/basiclands.rpy", line 14: expected statement.
+    action Return()
+                 ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Mon Mar  4 19:29:42 2024

@@ -2,8 +2,8 @@ screen Map():
     frame:
         xalign 0.0
         yalign 0.0
-        xsize 1920
-        ysize 1080
+        xsize 4003
+        ysize 4190
         background "map.png" 
         # for q in Places:
         #     if q.Active:

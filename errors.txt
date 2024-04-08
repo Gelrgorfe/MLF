@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/basiclands.rpy", line 14: expected statement.
-    action Return()
-                 ^
+File "game/scripts/screens.rpy", line 8: 'show' is not a keyword argument or valid child of the frame statement.
+    show background:
+        ^
 
-Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Mar  4 19:29:42 2024
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Sun Apr  7 22:13:08 2024

@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/basiclands.rpy", line 14, in script
-    jump Map
-ScriptError: could not find label 'Map'.
+  File "game/scripts/basiclands.rpy", line 25, in script
+    jump electronics
+ScriptError: could not find label 'electronics'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/basiclands.rpy", line 14, in script
-    jump Map
-  File "D:\renpy\renpy-7.4.11-sdk\renpy\ast.py", line 1974, in execute
+  File "game/scripts/basiclands.rpy", line 25, in script
+    jump electronics
+  File "F:\renpy-8.2.1-sdk\renpy\ast.py", line 1698, in execute
     rv = renpy.game.script.lookup(target)
-  File "D:\renpy\renpy-7.4.11-sdk\renpy\script.py", line 927, in lookup
+  File "F:\renpy-8.2.1-sdk\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'Map'.
+ScriptError: could not find label 'electronics'.
 
-Windows-10-10.0.19045 AMD64
-Ren'Py 8.0.3.22090809
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.2.1.24030407
 My Little Fun 0.1
-Mon May  8 21:23:46 2023
+Sun Apr  7 21:55:54 2024

@@ -2,8 +2,8 @@ screen Map():
     frame:
         xalign 0.0
         yalign 0.0
-        xsize 4003
-        ysize 4190
+        xsize 1920
+        ysize 1080
         background "map.png" 
         # for q in Places:
         #     if q.Active:
@@ -14,10 +14,10 @@ screen Map():
         #             action SetVariable("LocationID", q.ID), Return(q.name)
         #             focus_mask True
         #             hovered [Play("sound", "audio/click.wav")]
-        imagebutton auto "map_home_%s.png" xpos 207 ypos 205 focus_mask True action Jump("Home") hovered [Play("sound", "audio/click.wav")]
-        imagebutton auto "map_mall_%s.png" xpos 379 ypos 592 focus_mask True action Jump("Mall") hovered [Play("sound", "audio/click.wav")]
-        imagebutton auto "map_park_%s.png" xpos 903 ypos 613 focus_mask True action Jump("Park") hovered [Play("sound", "audio/click.wav")]
-        imagebutton auto "map_school_%s.png" xpos 1328 ypos 633 focus_mask True action Jump("School") hovered [Play("sound", "audio/click.wav")]
+        # imagebutton auto "map_home_%s.png" xpos 207 ypos 205 focus_mask True action Jump("Home") hovered [Play("sound", "audio/click.wav")]
+        # imagebutton auto "map_mall_%s.png" xpos 379 ypos 592 focus_mask True action Jump("Mall") hovered [Play("sound", "audio/click.wav")]
+        # imagebutton auto "map_park_%s.png" xpos 903 ypos 613 focus_mask True action Jump("Park") hovered [Play("sound", "audio/click.wav")]
+        # imagebutton auto "map_school_%s.png" xpos 1328 ypos 633 focus_mask True action Jump("School") hovered [Play("sound", "audio/click.wav")]
         # |  xpos 217 ypos 209 Home    |  xpos 207 ypos 205   |
         # |  xpos 386 ypos 594 Mall    |  xpos 379 ypos 592   |
         # |  xpos 912 ypos 620 Park    |  xpos 903 ypos 613   |

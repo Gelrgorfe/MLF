@@ -1,22 +1,74 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/basiclands.rpy", line 25, in script
-    jump electronics
-ScriptError: could not find label 'electronics'.
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 54, in execute
+    frame:
+KeyError: <Character: 'Twilight Sparkle'>
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/basiclands.rpy", line 25, in script
-    jump electronics
-  File "F:\renpy-8.2.1-sdk\renpy\ast.py", line 1698, in execute
-    rv = renpy.game.script.lookup(target)
-  File "F:\renpy-8.2.1-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'electronics'.
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "F:\renpy-8.2.1-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "F:\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "F:\renpy-8.2.1-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "F:\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "F:\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "F:\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "F:\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "F:\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "F:\renpy-8.2.1-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "F:\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "F:\renpy-8.2.1-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "F:\renpy-8.2.1-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 54, in execute
+    frame:
+  File "F:\renpy-8.2.1-sdk\renpy\text\text.py", line 1832, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "F:\renpy-8.2.1-sdk\renpy\text\text.py", line 1868, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "F:\renpy-8.2.1-sdk\renpy\substitutions.py", line 368, in substitute
+    s = interpolate(s, kwargs) # type: ignore
+  File "F:\renpy-8.2.1-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "F:\renpy-8.2.1-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "F:\renpy-8.2.1-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "F:\renpy-8.2.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+KeyError: <Character: 'Twilight Sparkle'>
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.1.24030407
 My Little Fun 0.1
-Sun Apr  7 21:55:54 2024
+Mon Apr  8 16:17:39 2024

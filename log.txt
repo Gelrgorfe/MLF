@@ -1,48 +1,111 @@
-2024-04-07 20:29:06 UTC
+2024-04-08 14:17:27 UTC
 Windows-10-10.0.22631
 Ren'Py 8.2.1.24030407
 
 Early init took 0.03s
-Loading error handling took 0.02s
-Loading script took 0.05s
-Loading save slot metadata took 0.02s
+Loading error handling took 0.03s
+Loading script took 0.09s
+Loading save slot metadata took 0.07s
 Loading persistent took 0.00s
-Running init code took 0.02s
+Running init code took 0.04s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.01s
+Reloading save slot metadata took 0.05s
 Index archives took 0.00s
-Dump and make backups took 0.02s
+Backing up script files to 'C:\\Users\\max\\AppData\\Roaming/RenPy/backups\\MLF':
+Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.02s
+Initial gc took 0.01s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.14s
+Creating interface object took 0.13s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.01s
 Build styles took 0.00s
 Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
 Prepare screens took 0.03s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
 Running _start took 0.00s
 Interface start took 0.03s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
-Windowed mode.
+Fullscreen mode.
 Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 537.13'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
-Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
+
+Full traceback:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "F:\renpy-8.2.1-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "F:\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "F:\renpy-8.2.1-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "F:\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "F:\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "F:\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "F:\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "F:\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "F:\renpy-8.2.1-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "F:\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "F:\renpy-8.2.1-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "F:\renpy-8.2.1-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 54, in execute
+    frame:
+  File "F:\renpy-8.2.1-sdk\renpy\text\text.py", line 1832, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "F:\renpy-8.2.1-sdk\renpy\text\text.py", line 1868, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "F:\renpy-8.2.1-sdk\renpy\substitutions.py", line 368, in substitute
+    s = interpolate(s, kwargs) # type: ignore
+  File "F:\renpy-8.2.1-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "F:\renpy-8.2.1-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "F:\renpy-8.2.1-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "F:\renpy-8.2.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+KeyError: <Character: 'Twilight Sparkle'>
+
+While running game code:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 45, in execute
+    screen currentstats:
+  File "game/scripts/screens.rpy", line 54, in execute
+    frame:
+KeyError: <Character: 'Twilight Sparkle'>

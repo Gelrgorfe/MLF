@@ -62,20 +62,20 @@ screen currentstats:
 
             vbox:
                 spacing 10
-                text "Twilight Sparkle affection" size 40
-                text "Pinkie Pie affection" size 40
-                text "Fluttershy affection" size 40
-                text "Rainbow Dash affection" size 40
-                text "Rarity affection" size 40
-                text "Applejack affection" size 40
+                text "Strength" size 40
+                text "Dexterity" size 40
+                text "Constitution" size 40
+                text "Intelligence" size 40
+                text "Wisdom" size 40
+                text "Charisma" size 40
             vbox:
                 spacing 10
-                text "[pony_affection[twilight]]" size 40
-                text "[pony_affection[pinkie]]" size 40
-                text "[pony_affection[fluttershy]]" size 40
-                text "[pony_affection[rainbow]]" size 40
-                text "[pony_affection[rarity]]" size 40
-                text "[pony_affection[applejack]]" size 40
+                text "[stats[strength]]" size 40
+                text "[stats[dexterity]]" size 40
+                text "[stats[constitution]]" size 40
+                text "[stats[intelligence]]" size 40
+                text "[stats[wisdom]]" size 40
+                text "[stats[charisma]]" size 40
 
 screen mapbutton:
     imagebutton:

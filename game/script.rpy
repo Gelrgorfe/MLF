@@ -1,9 +1,10 @@
-define twilight = Character("Twilight Sparkle")
-define pinkie = Character("Pinkie Pie")
-define fluttershy = Character("Fluttershy")
-define rainbow = Character("Rainbow Dash")
-define rarity = Character("Rarity")
-define applejack = Character("Applejack")
+define lorelei = Character("Lorelei")
+default strength = 0
+default dexterity = 0
+default constitution = 0
+default intelligence = 0
+default wisdom = 0
+default charisma = 0
 default location = "Home"
 default subplace = "Classroom"
 default LocationID = 3
@@ -27,12 +28,12 @@ label startgry:
     "Where the fuck am I"
 
 
-    $ player_name = renpy.input("What was my name? (default name is Gelrgorfe)")
+    $ player_name = renpy.input("What was my name? (default name is maksik)")
 
     $ player_name = player_name.strip()
 
     if player_name == "":
-        $ player_name="Gelrgorfe"
+        $ player_name="maksik"
   
     player_name "Right, my name is %(player_name)s!"
     $ clock.advance()

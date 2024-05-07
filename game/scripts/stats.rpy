@@ -2,9 +2,9 @@ default stats = {
     "strength": 0,
     "dexterity": 0,
     "constitution": 0,
-    "intelligence": 0,
-    "wisdom": 0,
-    "charisma": 0
+    "intelligence": 100,
+    "wisdom": 100,
+    "charisma": 7
 }
 
 label increase_stat(stat):

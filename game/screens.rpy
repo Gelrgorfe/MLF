@@ -30,7 +30,6 @@ style button:
 
 style button_text is gui_text:
     properties gui.text_properties("button")
-    yalign 0.5
 
 
 style label_text is gui_text:

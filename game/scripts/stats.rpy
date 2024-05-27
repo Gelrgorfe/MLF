@@ -1,7 +1,7 @@
 default stats = {
-    "strength": 0,
-    "dexterity": 0,
-    "constitution": 0,
+    "strength": 30,
+    "dexterity": 20,
+    "constitution": 80,
     "intelligence": 100,
     "wisdom": 100,
     "charisma": 7

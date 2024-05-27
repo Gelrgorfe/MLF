@@ -30,6 +30,7 @@ style button:
 
 style button_text is gui_text:
     properties gui.text_properties("button")
+    yalign 0.5
 
 
 style label_text is gui_text:
@@ -297,17 +298,14 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        if main_menu:
-            xanchor  0.5
-            xpos  0.5 
-            yanchor  0.5 
-            ypos  0.5
         yalign 0.5
 
         spacing gui.navigation_spacing
-
+        
         if main_menu:
-
+            xanchor  0.5
+            xpos  0.5 
+            ypos  0.5
             textbutton _("Start") action Start() style style.button["menu"]  
 
         else:
@@ -360,7 +358,7 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-
+    
     ## This ensures that any other menu screen is replaced.
     tag menu
 

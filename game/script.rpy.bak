@@ -1,12 +1,18 @@
 define lorelei = Character("Lorelei")
 define forg = Character("Forg")
 define knight = Character("Artaanel")
-default location = "Beginning"
-default subplace = "Tavern"
+default strength = 0
+default dexterity = 0
+default constitution = 0
+default intelligence = 0
+default wisdom = 0
+default charisma = 0
+default location = "Home"
+default subplace = "Classroom"
 default LocationID = 3
 
 label start:
-    call variables from _call_variables 
+    call variables 
     $ Running = True
     while Running:
         $ clock
@@ -21,6 +27,7 @@ label start:
     return
 label startgry:
 
+
     $ player_name = renpy.input("What was my name? (default name is maksik)")
 
     $ player_name = player_name.strip()
@@ -29,8 +36,6 @@ label startgry:
         $ player_name="maksik"
   
     player_name "Right, my name is %(player_name)s!"
-    player_name "Well I guess I should go and see why they wanted such a great adventurer as me in this disgusting little town"
-    # call screen Map
     $ clock.advance()
     jump test2
     return
@@ -38,7 +43,7 @@ label startgry:
 
 label test2:
     
-    scene tavern
+    scene classroom
     show mc at left
     show lorelei at right
     lorelei "Lorem ipsum"
@@ -55,12 +60,11 @@ label test2:
     knight "Lorem ipsum"
 
     "Once you add a story, pictures, and music, you can release it to the world!"
-    $ clock.advance()
-    jump day1
+    pause
 
     return
 
 label variables:
-    # $ Places = [Place(i, x, y, name, True) for i, (x, y, name) in enumerate([(207, 205, "Home"), (379, 592, "Mall"), (903, 613, "Park"), (1328, 633, "School")])]
-    # $ Locations = [SubPlace(i, LocationID, name, True) for i, name in enumerate(["Hall", "Classroom", "Toilet", "Roof"])]
+    $ Places = [Place(i, x, y, name, True) for i, (x, y, name) in enumerate([(207, 205, "Home"), (379, 592, "Mall"), (903, 613, "Park"), (1328, 633, "School")])]
+    $ Locations = [SubPlace(i, LocationID, name, True) for i, name in enumerate(["Hall", "Classroom", "Toilet", "Roof"])]
     return

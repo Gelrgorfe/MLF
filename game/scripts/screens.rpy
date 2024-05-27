@@ -5,29 +5,28 @@ screen Map():
         xsize 1920
         ysize 1080
         background "map.png" 
-        # for q in Places:
-        #     if q.Active:
-        #         imagebutton:
-        #             auto "map_"+q.name+"_%s.png"
-        #             xpos q.x
-        #             ypos q.y
-        #             action SetVariable("LocationID", q.ID), Return(q.name)
-        #             focus_mask True
-        #             hovered [Play("sound", "audio/click.wav")]
-        # imagebutton auto "map_home_%s.png" xpos 207 ypos 205 focus_mask True action Jump("Home") hovered [Play("sound", "audio/click.wav")]
-        # imagebutton auto "map_mall_%s.png" xpos 379 ypos 592 focus_mask True action Jump("Mall") hovered [Play("sound", "audio/click.wav")]
-        # imagebutton auto "map_park_%s.png" xpos 903 ypos 613 focus_mask True action Jump("Park") hovered [Play("sound", "audio/click.wav")]
-        # imagebutton auto "map_school_%s.png" xpos 1328 ypos 633 focus_mask True action Jump("School") hovered [Play("sound", "audio/click.wav")]
-        # |  xpos 217 ypos 209 Home    |  xpos 207 ypos 205   |
-        # |  xpos 386 ypos 594 Mall    |  xpos 379 ypos 592   |
-        # |  xpos 912 ypos 620 Park    |  xpos 903 ypos 613   |
-        # |  xpos 1337 ypos 640 School |  xpos 1328 ypos 633  |
+        for q in Places:    # affected by script.rpy (label variables: ... )
+            if q.Active:
+                imagebutton:
+                    auto "map_"+q.name+"_%s.png"
+                    xpos q.x
+                    ypos q.y
+                    action SetVariable("LocationID", q.ID), Return(q.name)
+                    focus_mask True
+                    hovered [Play("sound", "audio/click.wav")]
+                    # label variables in script.rpy also affects this
+        imagebutton auto "armourer_%s.png" xpos 660 ypos 170 focus_mask True action Jump("Armourer") hovered [Play("sound", "audio/click.wav")]
+        imagebutton auto "monastery_%s.png" xpos 1020 ypos 590 focus_mask True action Jump("Monastery") hovered [Play("sound", "audio/click.wav")]
+        imagebutton auto "potionmaker_%s.png" xpos 680 ypos 650 focus_mask True action Jump("Potionmaker") hovered [Play("sound", "audio/click.wav")]
+        imagebutton auto "tavern_%s.png" xpos 750 ypos 380 focus_mask True action Jump("Tavern") hovered [Play("sound", "audio/click.wav")]
+        imagebutton auto "weaponsmith_%s.png" xpos 1080 ypos 310 focus_mask True action Jump("Weaponsmith") hovered [Play("sound", "audio/click.wav")]
+        imagebutton auto "forest_%s.png" xpos 120 ypos 70 focus_mask True action Jump("Forest") hovered [Play("sound", "audio/click.wav")]
     imagebutton:
         xalign 1.0
         yalign 0.0
         xoffset -30
         yoffset 30
-        auto "return_%s.png"
+        auto "returnicon_%s.png"
         hovered [Play("sound", "audio/click.wav")]
         action Return()
 
@@ -37,7 +36,7 @@ screen statsbutton:
         yalign 0.0
         xoffset -30
         yoffset 30
-        auto "statsbutton_%s.png"
+        auto "statsicon_%s.png"
         hovered [Play("sound", "audio/click.wav")]
         action ShowMenu("currentstats")
 
@@ -70,20 +69,19 @@ screen currentstats:
                 text "Charisma" size 40
             vbox:
                 spacing 10
-                text "[stats[strength]]" size 40
-                text "[stats[dexterity]]" size 40
-                text "[stats[constitution]]" size 40
-                text "[stats[intelligence]]" size 40
-                text "[stats[wisdom]]" size 40
-                text "[stats[charisma]]" size 40
-
+                text "[stats['strength']]" size 40
+                text "[stats['dexterity']]" size 40
+                text "[stats['constitution']]" size 40
+                text "[stats['intelligence']]" size 40
+                text "[stats['wisdom']]" size 40
+                text "[stats['charisma']]" size 40
 screen mapbutton:
     imagebutton:
         xalign 0.0
         yalign 0.0
         xoffset 30
         yoffset 30
-        auto "mapbutton_%s.png"
+        auto "mapicon_%s.png"
         hovered [Play("sound", "audio/click.wav")]
         action ShowMenu("Map")
 

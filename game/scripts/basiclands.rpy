@@ -26,6 +26,7 @@ screen forest:
 
 label Armourer:
     call screen armourer
+    
     menu:
         "Talk":
             jump talk_armourer

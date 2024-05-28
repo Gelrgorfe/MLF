@@ -47,7 +47,7 @@ screen currentstats:
         yalign 0.0
         xoffset -30
         yoffset 30
-        auto "return_%s.png"
+        auto "returnicon_%s.png"
         hovered [Play("sound", "audio/click.wav")]
         action Return()
     frame:

@@ -1,3 +1,6 @@
+# enemy can't have negative hp
+# contunue action after defeating the enemy
+
 init python:
     import random
 
@@ -13,7 +16,7 @@ init python:
         Enemy("Enemy2", 70, 12, 100),
         Enemy("Enemy3", 100, 15, 100),
         Enemy("Enemy4", 200, 25, 100),
-        Enemy("Your mom", 60, 10, 100)
+        Enemy("Final Boss", 60, 10, 100)
     ]
 
 label forest_event:
@@ -41,7 +44,11 @@ label start_battle:
     $ enemy_hp = current_opponent.hp
     $ enemy_strength = current_opponent.strength
     $ enemy_accuracy = current_opponent.accuracy
+    
+    jump combat
 
+
+label combat:
     while constitution > 0 and enemy_hp > 0:
         menu:
             "Light attack":
@@ -52,6 +59,7 @@ label start_battle:
                 jump dodge
             "Drink a potion":
                 jump drink_potion
+    jump start_battle
 
 label light_attack:
     if random.randint(1, 100) <= dexterity:
@@ -73,7 +81,7 @@ label hard_attack:
 
 label dodge:
     $ player_defense_bonus = min(player_defense_bonus + 5, max_defense_bonus)
-    "Dodge increased. Chance to dodge increased by 5%."
+    "Dodge increased. Chance to dodge increased by 5 percent."
     jump enemy_turn
 
 label drink_potion:
@@ -96,5 +104,5 @@ label enemy_turn:
         "Not much of a challenge, innit?"
         player_name "The forest seems darker than before..."
     else:
-        jump start_battle
+        jump combat
     return

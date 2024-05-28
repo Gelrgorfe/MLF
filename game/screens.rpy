@@ -303,9 +303,9 @@ screen navigation():
         spacing gui.navigation_spacing
         
         if main_menu:
-            xanchor  0.5
-            xpos  0.5 
-            ypos  0.5
+            # xanchor  0.5
+            # xpos  0.5 
+            # ypos  0.5
             textbutton _("Start") action Start() style style.button["menu"]  
 
         else:

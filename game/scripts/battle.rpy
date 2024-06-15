@@ -13,14 +13,15 @@ init python:
             self.pic = pic
 
     opponents = [
-        Enemy("Enemy1", 50, 4, 90, "Enemy_1.png"),
-        Enemy("Enemy2", 70, 6, 90, "Enemy_2.png"),
-        Enemy("Enemy3", 100, 8, 90, "Enemy_3.png"),
-        Enemy("Enemy4", 120, 10, 90, "Enemy_4.png"),
-        Enemy("Enemy5", 60, 10, 90, "Enemy_5.png")
+        Enemy("Wolf", 50, 4, 90, "wilk.png"),
+        Enemy("Goblin", 70, 6, 90, "goblin.png"),
+        Enemy("Kobold", 100, 8, 90, "kobold.png"),
+        Enemy("Gnoll", 120, 10, 90, "gnoll.png"),
+        Enemy("Orc", 60, 10, 90, "orc.png")
     ]
 
 label forest_event:
+    scene forest
     if random.randint(1, 100) <= 15:
         call encounter_enemy
     else:
@@ -51,7 +52,8 @@ label start_battle:
 
 
 label combat:
-    show expression enemy_picture
+    show expression enemy_picture at right
+    show mc at left
     while constitution > 0 and enemy_hp > 0:
         menu:
             "Light attack":
@@ -97,6 +99,7 @@ label enemy_turn:
         if random.randint(1, 100) <= enemy_accuracy - player_defense_bonus:
             $ damage = int(enemy_strength * 1.2)
             $ constitution -= damage
+            show mc with vpunch
             "[current_opponent.name] dealt [damage] damage to you!... how preposterous. You have [constitution] hp left."
         else:
             "[current_opponent.name] missed. As it should be"
@@ -107,6 +110,10 @@ label enemy_turn:
     elif enemy_hp <= 0:
         "Not much of a challenge, innit?"
         hide enemy_picture
+        show mc_golden at left
+        player_name "Another day, another kill..."
+        hide mc_golden
+        hide mc
         player_name "The forest seems darker than before..."
     else:
         jump combat

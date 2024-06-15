@@ -1,26 +1,21 @@
 define lorelei = Character("Lorelei")
 define forg = Character("Forg")
 define knight = Character("Artaanel")
-default location = "Beginning"
-default subplace = "Tavern"
-default LocationID = 3
 
 label start:
     call variables from _call_variables 
     $ Running = True
     while Running:
+        play music 'audio/muzyka.mp3'
+        show screen statsbutton
+        show screen mapbutton
+        show screen timebutton
         $ clock
-        $ location_img = location.lower()
-        $ subplace_img = subplace.lower()
-        if renpy.has_image(location_img, exact=True):
-            scene expression location_img
-            show screen statsbutton
-            show screen mapbutton
-            show screen timebutton
         jump startgry
     return
-label startgry:
 
+label startgry:
+    scene beginning
     $ player_name = renpy.input("What was my name? (default name is maksik)")
 
     $ player_name = player_name.strip()
@@ -53,6 +48,7 @@ label test2:
     hide forg
     show knight at right
     knight "Lorem ipsum"
+    hide knight
 
     "Once you add a story, pictures, and music, you can release it to the world!"
     $ clock.advance()
@@ -62,5 +58,5 @@ label test2:
 
 label variables:
     # $ Places = [Place(i, x, y, name, True) for i, (x, y, name) in enumerate([(207, 205, "Home"), (379, 592, "Mall"), (903, 613, "Park"), (1328, 633, "School")])]
-    # $ Locations = [SubPlace(i, LocationID, name, True) for i, name in enumerate(["Hall", "Classroom", "Toilet", "Roof"])]
+    # $ Locations = [SubPlace(i, LocationID, name, True) for i, name in enumerate(["Armourer", "Monastery", "Potionmaker", "Tavern", "Weaponsmith", "Forest"])]
     return
